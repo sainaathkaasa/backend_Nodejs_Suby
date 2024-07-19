@@ -9,7 +9,7 @@ const path = require('path')
 
 const app = express()
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 dotEnv.config()
 
@@ -33,6 +33,6 @@ app.listen(PORT, ()=>{
 })
 
 // have to create route on the base of server
-app.use('/home',(req, res)=>{
+app.use('/',(req, res)=>{
     res.send("<h1>Welcome to SUBY");
 })
