@@ -6,12 +6,14 @@ const bodyParser = require("body-parser");
 const firmRoutes = require("./routes/firmRoute")
 const productRoutes = require("./routes/productRoute")
 const path = require('path')
+const cors = require('cors') 
 
 const app = express()
 
 const PORT = process.env.PORT || 4000;
 
 dotEnv.config()
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
@@ -28,11 +30,11 @@ app.use("/product", productRoutes);
 app.use("/uploads", express.static('uploads'))
 
 // to start server
-app.listen(PORT, ()=>{
+app.listen(PORT, ()=>{ 
     console.log(`Server started and running at ${PORT}`)
 })
 
 // have to create route on the base of server
 app.use('/',(req, res)=>{
-    res.send("<h1>Welcome to SUBY");
-})
+    res.send("<h1>Welcome to SUBY"); 
+}) 
