@@ -17,7 +17,7 @@ const FirmSchema = new mongoose.Schema({
         type:[
             {
                 type:String,
-                enum:["veg","non-veg"]
+                enum:['veg','non-veg']
             }
         ] 
     },
@@ -28,7 +28,7 @@ const FirmSchema = new mongoose.Schema({
                 enum:['south-indian','north-indian','chinese','bakery']
             }
         ]
-    },
+    }, 
     offer:{
         type:String
     },
@@ -49,5 +49,5 @@ const FirmSchema = new mongoose.Schema({
 
 const Firm = mongoose.model("Firm",FirmSchema);
 
-module.exports = Firm;
+module.exports = Firm; 
 

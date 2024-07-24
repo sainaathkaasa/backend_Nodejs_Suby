@@ -8,4 +8,4 @@ router.post('/login',vendorController.vendorLogin);
 router.get('/all-vendors', vendorController.getAllVendor);
 router.get('/single-vendor/:id', vendorController.getVendorById);
 
-module.exports = router;
+module.exports = router; 

@@ -10,10 +10,10 @@ const cors = require('cors')
 
 const app = express()
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 
 dotEnv.config()
-app.use(cors());
+app.use(cors()); 
 
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
@@ -36,5 +36,5 @@ app.listen(PORT, ()=>{
 
 // have to create route on the base of server
 app.use('/',(req, res)=>{
-    res.send("<h1>Welcome to SUBY"); 
+    res.send("<h1>Welcome to SUBY");  
 }) 
